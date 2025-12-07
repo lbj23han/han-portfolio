@@ -1,20 +1,19 @@
+import { UI } from "@/components/ui/projectsPage";
 import { projects } from "@/constants/projects";
 import { PROJECTS_PAGE_COPY } from "@/constants/pages/projectsPage";
 import { ProjectCard } from "@/components/projects/ProjectCard";
 
 export function ProjectsPage() {
   return (
-    <section className="space-y-4">
-      <h1 className="text-2xl font-bold mb-2">{PROJECTS_PAGE_COPY.title}</h1>
-      <p className="text-sm text-zinc-500 dark:text-zinc-400">
-        {PROJECTS_PAGE_COPY.description}
-      </p>
+    <UI.Section>
+      <UI.Title>{PROJECTS_PAGE_COPY.title}</UI.Title>
+      <UI.Description>{PROJECTS_PAGE_COPY.description}</UI.Description>
 
-      <div className="space-y-3">
+      <UI.List>
         {projects.map((p) => (
           <ProjectCard key={p.name} project={p} />
         ))}
-      </div>
-    </section>
+      </UI.List>
+    </UI.Section>
   );
 }
