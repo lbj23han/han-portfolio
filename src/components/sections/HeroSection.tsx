@@ -1,15 +1,16 @@
-import { HOME_TYPO, HOME_TEXT } from "@/constants/home";
+import { UI } from "@/components/ui/home";
+import { HOME_TEXT } from "@/constants/home";
 
 export function HeroSection() {
   return (
-    <section className={HOME_TYPO.heroWrapper}>
-      <h1 className={HOME_TYPO.title}>{HOME_TEXT.title}</h1>
+    <UI.HeroSection>
+      <UI.HeroTitle>{HOME_TEXT.title}</UI.HeroTitle>
 
-      <p className={HOME_TYPO.desc}>{HOME_TEXT.desc}</p>
+      <UI.HeroDesc>{HOME_TEXT.desc}</UI.HeroDesc>
 
-      <p className={HOME_TYPO.sub}>
+      <UI.HeroSub>
         <strong>{HOME_TEXT.sub}</strong>
-      </p>
-    </section>
+      </UI.HeroSub>
+    </UI.HeroSection>
   );
 }

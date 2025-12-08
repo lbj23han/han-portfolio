@@ -1,31 +1,17 @@
-import Image from "next/image";
-import { HOME_CTA, LINKS } from "@/constants/home";
+import { UI } from "@/components/ui/home";
+import { CTA_TEXT, LINKS } from "@/constants/home";
 
 export function CTASection() {
   return (
-    <div className={HOME_CTA.wrapper}>
-      <a
-        className={`${HOME_CTA.buttonBase} ${HOME_CTA.primary}`}
-        href={LINKS.github}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <Image
-          className="dark:invert"
-          src="/github-mark.svg"
-          alt="GitHub"
-          width={16}
-          height={16}
-        />
-        GitHub
-      </a>
+    <UI.CTAWrapper>
+      <UI.CTAButtonPrimary href={LINKS.github}>
+        <UI.CTAIcon />
+        {CTA_TEXT.github}
+      </UI.CTAButtonPrimary>
 
-      <a
-        className={`${HOME_CTA.buttonBase} ${HOME_CTA.secondary}`}
-        href={LINKS.projects}
-      >
-        View Projects
-      </a>
-    </div>
+      <UI.CTAButtonSecondary href={LINKS.projects}>
+        {CTA_TEXT.projects}
+      </UI.CTAButtonSecondary>
+    </UI.CTAWrapper>
   );
 }

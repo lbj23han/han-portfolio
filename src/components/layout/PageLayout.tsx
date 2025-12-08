@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { HOME_LAYOUT } from "@/constants/home";
+import { UI } from "@/components/ui/layout";
 
 type Props = {
   children: ReactNode;
@@ -7,8 +7,8 @@ type Props = {
 
 export function PageLayout({ children }: Props) {
   return (
-    <div className={HOME_LAYOUT.outer}>
-      <main className={HOME_LAYOUT.main}>{children}</main>
-    </div>
+    <UI.LayoutOuter>
+      <UI.LayoutMain>{children}</UI.LayoutMain>
+    </UI.LayoutOuter>
   );
 }

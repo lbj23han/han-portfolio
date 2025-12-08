@@ -1,4 +1,4 @@
-import { UI } from "../ui/Card";
+import { UI } from "@/components/ui/cardUi";
 import type { Project } from "@/constants/projects";
 import { statusLabel } from "@/constants/projects";
 
