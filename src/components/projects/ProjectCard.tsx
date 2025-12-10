@@ -1,6 +1,8 @@
+"use client";
+
 import { UI } from "@/components/ui/cardUi";
 import type { Project } from "@/constants/projects";
-import { statusLabel } from "@/constants/projects";
+import { projectUiText, statusLabel } from "@/constants/projects";
 
 type Props = {
   project: Project;
@@ -16,7 +18,15 @@ export function ProjectCard({ project }: Props) {
 
       <UI.CardDescription>{project.description}</UI.CardDescription>
 
-      <UI.CardSubtext>{project.tech.join(" · ")}</UI.CardSubtext>
+      <UI.CardRow>
+        <UI.CardSubtext>{project.tech.join(" · ")}</UI.CardSubtext>
+
+        {project.url && (
+          <UI.CardButton onClick={() => window.open(project.url, "_blank")}>
+            {projectUiText.openProject}
+          </UI.CardButton>
+        )}
+      </UI.CardRow>
     </UI.Card>
   );
 }

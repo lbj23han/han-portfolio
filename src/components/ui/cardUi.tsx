@@ -1,6 +1,10 @@
-import type { ReactNode } from "react";
+import type { ReactNode, ButtonHTMLAttributes } from "react";
 
 type ChildrenProps = {
+  children: ReactNode;
+};
+
+type CardButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   children: ReactNode;
 };
 
@@ -45,5 +49,25 @@ export const UI = {
 
   CardSubtext: ({ children }: ChildrenProps) => (
     <p className="text-xs text-zinc-500 dark:text-zinc-400">{children}</p>
+  ),
+
+  CardButton: ({ children, ...props }: CardButtonProps) => (
+    <button
+      {...props}
+      className="
+        mt-3 px-3 py-1.5 text-sm font-medium
+        rounded-lg border border-zinc-300 dark:border-zinc-700
+        bg-zinc-100 dark:bg-zinc-800 
+        text-zinc-700 dark:text-zinc-200
+        hover:bg-zinc-200 dark:hover:bg-zinc-700
+        transition
+      "
+    >
+      {children}
+    </button>
+  ),
+
+  CardRow: ({ children }: ChildrenProps) => (
+    <div className="flex items-baseline justify-between">{children}</div>
   ),
 };

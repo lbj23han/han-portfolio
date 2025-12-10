@@ -1,4 +1,3 @@
-// src/constants/pages/projectsPage.ts
 export const PROJECTS_PAGE_COPY = {
   title: "Projects",
   description:
