@@ -21,11 +21,23 @@ export function ProjectCard({ project }: Props) {
       <UI.CardRow>
         <UI.CardSubtext>{project.tech.join(" · ")}</UI.CardSubtext>
 
-        {project.url && (
-          <UI.CardButton onClick={() => window.open(project.url, "_blank")}>
-            {projectUiText.openProject}
+        <div className="flex items-baseline gap-2">
+          <UI.CardButton
+            onClick={() => {
+              // TODO: 나중에 여기서 모달 열기 / 카드 확장 로직 추가
+              console.log("자세히 보기:", project.name);
+            }}
+          >
+            {"자세히 보기"}
           </UI.CardButton>
-        )}
+
+          {/* 🌐 URL 있을 때만 외부 링크 버튼 */}
+          {project.url && (
+            <UI.CardButton onClick={() => window.open(project.url, "_blank")}>
+              {projectUiText.openProject}
+            </UI.CardButton>
+          )}
+        </div>
       </UI.CardRow>
     </UI.Card>
   );

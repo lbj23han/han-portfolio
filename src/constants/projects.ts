@@ -24,6 +24,7 @@ export const projects: Project[] = [
     description: "부서별 예치금/미수금 관리용 카페 내부 가계부 웹앱",
     tech: ["Next.js", "TypeScript", "Tailwind"],
     status: "in-progress",
+    url: "https://nescafe-admin-pwa.vercel.app",
   },
   {
     name: "FcSquadMeter",
