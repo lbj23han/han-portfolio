@@ -1,7 +1,10 @@
-import type { JSX as ReactJSX } from "react";
-
 declare global {
   namespace JSX {
-    interface IntrinsicElements extends ReactJSX.IntrinsicElements {}
+    interface IntrinsicElements {
+      "my-custom-element": React.DetailedHTMLProps<
+        React.HTMLAttributes<HTMLElement>,
+        HTMLElement
+      >;
+    }
   }
 }
