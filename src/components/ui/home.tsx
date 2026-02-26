@@ -27,19 +27,40 @@ export const UI = {
   ),
 
   HeroTitle: ({ children }: ChildrenProps) => (
-    <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
+    <h1
+      className="
+      max-w-[22ch]
+      text-3xl font-semibold leading-tight tracking-tight
+      text-black dark:text-zinc-50
+      break-keep whitespace-pretty
+    "
+    >
       {children}
     </h1>
   ),
 
   HeroDesc: ({ children }: ChildrenProps) => (
-    <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
+    <p
+      className="
+      max-w-[60ch]
+      text-lg leading-relaxed
+      text-zinc-600 dark:text-zinc-400
+      break-keep whitespace-pretty
+    "
+    >
       {children}
     </p>
   ),
 
   HeroSub: ({ children }: ChildrenProps) => (
-    <p className="max-w-md text-sm leading-6 text-zinc-500 dark:text-zinc-400">
+    <p
+      className="
+      max-w-[60ch]
+      text-base leading-relaxed
+      text-zinc-500 dark:text-zinc-400
+      break-keep whitespace-pretty
+    "
+    >
       {children}
     </p>
   ),

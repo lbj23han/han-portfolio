@@ -112,12 +112,11 @@ function MediaSlider({ items }: { items: MediaItem[] }) {
           width={1200}
           height={675}
           className="h-auto w-full"
-          priority={i === 0} // 첫 이미지는 LCP 개선
-          unoptimized={current.type === "gif"} // GIF는 최적화 끄는 게 안전
+          priority={i === 0}
+          unoptimized={current.type === "gif"}
         />
       </div>
 
-      {/* 점 네비게이션 */}
       <div className="mt-2 flex flex-wrap gap-2">
         {items.map((_, idx) => (
           <button
