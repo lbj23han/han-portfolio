@@ -39,6 +39,18 @@ export const UI = {
     </h1>
   ),
 
+  HeroMeta: ({ children }: ChildrenProps) => (
+    <p
+      className="
+      text-sm font-medium
+      text-zinc-500 dark:text-zinc-400
+      break-keep whitespace-pretty
+    "
+    >
+      {children}
+    </p>
+  ),
+
   HeroDesc: ({ children }: ChildrenProps) => (
     <p
       className="
@@ -48,6 +60,36 @@ export const UI = {
       break-keep whitespace-pretty
     "
     >
+      {children}
+    </p>
+  ),
+
+  HeroTagRow: ({ children }: ChildrenProps) => (
+    <div className="flex flex-wrap gap-2 text-xs text-zinc-500 dark:text-zinc-400">
+      {children}
+    </div>
+  ),
+
+  HeroTagChip: ({ children }: ChildrenProps) => (
+    <span className="rounded-full border border-zinc-800/10 bg-zinc-900/5 px-3 py-1 dark:border-zinc-50/10 dark:bg-zinc-50/5">
+      {children}
+    </span>
+  ),
+
+  HeroHighlightCard: ({ children }: ChildrenProps) => (
+    <div className="w-full max-w-[60ch] rounded-2xl border border-zinc-800/10 bg-zinc-900/[0.02] p-4 text-left shadow-sm dark:border-zinc-50/10 dark:bg-zinc-50/[0.03]">
+      {children}
+    </div>
+  ),
+
+  HeroHighlightTitle: ({ children }: ChildrenProps) => (
+    <p className="text-xs font-semibold uppercase tracking-[0.16em] text-zinc-500 dark:text-zinc-400">
+      {children}
+    </p>
+  ),
+
+  HeroHighlightDesc: ({ children }: ChildrenProps) => (
+    <p className="mt-1 text-sm leading-relaxed text-zinc-600 dark:text-zinc-300 break-keep whitespace-pretty">
       {children}
     </p>
   ),

@@ -6,11 +6,20 @@ export function HeroSection() {
     <UI.HeroSection>
       <UI.HeroTitle>{HOME_TEXT.title}</UI.HeroTitle>
 
+      <UI.HeroMeta>{HOME_TEXT.meta}</UI.HeroMeta>
+
       <UI.HeroDesc>{HOME_TEXT.desc}</UI.HeroDesc>
 
-      <UI.HeroSub>
-        <strong>{HOME_TEXT.sub}</strong>
-      </UI.HeroSub>
+      <UI.HeroTagRow>
+        {HOME_TEXT.stackTags.map((tag) => (
+          <UI.HeroTagChip key={tag}>{tag}</UI.HeroTagChip>
+        ))}
+      </UI.HeroTagRow>
+
+      <UI.HeroHighlightCard>
+        <UI.HeroHighlightTitle>{HOME_TEXT.recentTitle}</UI.HeroHighlightTitle>
+        <UI.HeroHighlightDesc>{HOME_TEXT.recentDesc}</UI.HeroHighlightDesc>
+      </UI.HeroHighlightCard>
     </UI.HeroSection>
   );
 }
