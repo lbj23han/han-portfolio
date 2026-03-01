@@ -64,6 +64,18 @@ export function ProjectCard({ project }: Props) {
               ))}
             </ul>
           )}
+          {project.github && (
+            <div className="pt-2 flex justify-end">
+              <a
+                href={project.github}
+                target="_blank"
+                rel="noreferrer"
+                className="text-sm underline underline-offset-2 opacity-80 hover:opacity-100"
+              >
+                {projectUiText.openGithub}
+              </a>
+            </div>
+          )}
 
           {hasMedia && <MediaSlider items={project.media!} />}
         </div>
@@ -105,16 +117,25 @@ function MediaSlider({ items }: { items: MediaItem[] }) {
         </div>
       </div>
 
+      {/* 여기부터 사이즈 고정 영역 */}
       <div className="mt-3 overflow-hidden rounded-lg">
-        <Image
-          src={current.src}
-          alt={current.alt ?? ""}
-          width={1200}
-          height={675}
-          className="h-auto w-full"
-          priority={i === 0}
-          unoptimized={current.type === "gif"}
-        />
+        <div
+          className="
+            relative mx-auto
+            w-[80vw] max-w-full
+            h-[45vh] max-h-[480px]
+          "
+        >
+          <Image
+            src={current.src}
+            alt={current.alt ?? ""}
+            fill
+            sizes="(max-width: 768px) 100vw, 80vw"
+            className="object-contain"
+            priority={i === 0}
+            unoptimized={current.type === "gif"}
+          />
+        </div>
       </div>
 
       <div className="mt-2 flex flex-wrap gap-2">
