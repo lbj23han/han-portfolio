@@ -5,12 +5,27 @@ import { useMemo, useState } from "react";
 import { UI } from "@/components/ui/cardUi";
 import type { Project } from "@/constants/projects";
 import { projectUiText, statusLabel } from "@/constants/projects";
+import { useLocale } from "@/components/layout/LocaleProvider";
+import { pick } from "@/lib/i18n";
 
 type Props = {
   project: Project;
 };
 
+function toSafeId(input: string) {
+  return input
+    .trim()
+    .toLowerCase()
+    .replace(/[^\p{L}\p{N}\s-]/gu, "") // 한글/영문/숫자/공백/- 외 제거
+    .replace(/\s+/g, "-")
+    .slice(0, 60);
+}
+
 export function ProjectCard({ project }: Props) {
+  const { locale } = useLocale();
+  const ui = pick(locale, projectUiText);
+  const status = pick(locale, statusLabel);
+
   const [expanded, setExpanded] = useState(false);
 
   const hasDetail = Boolean(project.detail?.length);
@@ -18,18 +33,24 @@ export function ProjectCard({ project }: Props) {
   const canExpand = hasDetail || hasMedia;
 
   const toggleLabel = useMemo(
-    () => (expanded ? projectUiText.collapse : projectUiText.viewMore),
-    [expanded],
+    () => (expanded ? ui.collapse : ui.viewMore),
+    [expanded, ui.collapse, ui.viewMore],
   );
+
+  const title = project.name[locale];
+  const description = project.description[locale];
+  const detail = project.detail?.map((d) => d[locale]) ?? [];
+
+  const detailId = `project-detail-${toSafeId(title)}`;
 
   return (
     <UI.Card>
       <UI.CardHeader>
-        <UI.CardTitle>{project.name}</UI.CardTitle>
-        <UI.CardBadge>{statusLabel[project.status]}</UI.CardBadge>
+        <UI.CardTitle>{title}</UI.CardTitle>
+        <UI.CardBadge>{status[project.status]}</UI.CardBadge>
       </UI.CardHeader>
 
-      <UI.CardDescription>{project.description}</UI.CardDescription>
+      <UI.CardDescription>{description}</UI.CardDescription>
 
       <UI.CardRow>
         <UI.CardSubtext>{project.tech.join(" · ")}</UI.CardSubtext>
@@ -39,31 +60,30 @@ export function ProjectCard({ project }: Props) {
             <UI.CardButton
               onClick={() => setExpanded((v) => !v)}
               aria-expanded={expanded}
-              aria-controls={`project-detail-${project.name}`}
+              aria-controls={detailId}
             >
               {toggleLabel}
             </UI.CardButton>
           )}
 
-          {/* URL 있을 때 외부 링크 버튼 */}
           {project.url && (
             <UI.CardButton onClick={() => window.open(project.url, "_blank")}>
-              {projectUiText.openProject}
+              {ui.openProject}
             </UI.CardButton>
           )}
         </div>
       </UI.CardRow>
 
-      {/* 확장 영역 */}
       {canExpand && expanded && (
-        <div id={`project-detail-${project.name}`} className="mt-4 space-y-3">
+        <div id={detailId} className="mt-4 space-y-3">
           {hasDetail && (
             <ul className="list-disc pl-5 text-sm opacity-90">
-              {project.detail!.map((line, idx) => (
+              {detail.map((line, idx) => (
                 <li key={idx}>{line}</li>
               ))}
             </ul>
           )}
+
           {project.github && (
             <div className="pt-2 flex justify-end">
               <a
@@ -72,7 +92,7 @@ export function ProjectCard({ project }: Props) {
                 rel="noreferrer"
                 className="text-sm underline underline-offset-2 opacity-80 hover:opacity-100"
               >
-                {projectUiText.openGithub}
+                {ui.openGithub}
               </a>
             </div>
           )}
@@ -87,21 +107,30 @@ export function ProjectCard({ project }: Props) {
 type MediaItem = NonNullable<Project["media"]>[number];
 
 function MediaSlider({ items }: { items: MediaItem[] }) {
+  const { locale } = useLocale();
+  const ui = pick(locale, projectUiText);
+
   const [i, setI] = useState(0);
   const current = items[i];
+
+  const fallbackAlt = locale === "ko" ? `미디어 ${i + 1}` : `Media ${i + 1}`;
+  const prevAria = locale === "ko" ? "이전" : "Previous";
+  const nextAria = locale === "ko" ? "다음" : "Next";
+  const dotAria =
+    locale === "ko" ? `미디어 ${i + 1} 보기` : `View media ${i + 1}`;
 
   return (
     <div className="rounded-xl border p-3">
       <div className="flex items-center justify-between gap-2">
         <div className="text-sm font-medium opacity-90">
-          {current.alt ?? `미디어 ${i + 1}`}
+          {current.alt ?? fallbackAlt}
         </div>
 
         <div className="flex gap-2">
           <button
             className="rounded-lg border px-3 py-1 text-sm"
             onClick={() => setI((v) => (v - 1 + items.length) % items.length)}
-            aria-label="이전"
+            aria-label={prevAria}
             type="button"
           >
             ←
@@ -109,7 +138,7 @@ function MediaSlider({ items }: { items: MediaItem[] }) {
           <button
             className="rounded-lg border px-3 py-1 text-sm"
             onClick={() => setI((v) => (v + 1) % items.length)}
-            aria-label="다음"
+            aria-label={nextAria}
             type="button"
           >
             →
@@ -117,15 +146,8 @@ function MediaSlider({ items }: { items: MediaItem[] }) {
         </div>
       </div>
 
-      {/* 여기부터 사이즈 고정 영역 */}
       <div className="mt-3 overflow-hidden rounded-lg">
-        <div
-          className="
-            relative mx-auto
-            w-[80vw] max-w-full
-            h-[45vh] max-h-[480px]
-          "
-        >
+        <div className="relative mx-auto w-[80vw] max-w-full h-[45vh] max-h-[480px]">
           <Image
             src={current.src}
             alt={current.alt ?? ""}
@@ -147,7 +169,8 @@ function MediaSlider({ items }: { items: MediaItem[] }) {
             className={`h-2 w-2 rounded-full border ${
               idx === i ? "opacity-100" : "opacity-40"
             }`}
-            aria-label={`미디어 ${idx + 1} 보기`}
+            aria-label={dotAria}
+            title={ui.openMedia}
           />
         ))}
       </div>
