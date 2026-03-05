@@ -108,41 +108,48 @@ export const UI = {
   ),
 
   // CTA
-  CTAWrapper: ({ children }: ChildrenProps) => (
-    <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
+  CTAStack: ({ children }: ChildrenProps) => (
+    <div className="flex w-full flex-col items-center sm:items-start">
       {children}
     </div>
   ),
 
-  CTAButtonBase: ({ children }: ChildrenProps) => (
-    <span className="flex h-12 w-full items-center justify-center px-5 rounded-full transition-colors md:w-[158px]">
+  CTAWrapper: ({ children }: ChildrenProps) => (
+    <div className="flex w-full flex-col gap-4 text-base font-medium sm:flex-row sm:w-auto">
       {children}
-    </span>
+    </div>
   ),
 
-  CTAButtonPrimary: ({ children, href }: ChildrenProps & { href: string }) => (
-    <a
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="flex h-12 w-full items-center justify-center px-5 rounded-full transition-colors md:w-[158px]
-                 gap-2 bg-foreground text-background hover:bg-[#383838] 
-                 dark:hover:bg-[#ccc]"
-    >
-      {children}
-    </a>
-  ),
-
-  CTAButtonSecondary: ({
+  CTAButtonPrimary: ({
     children,
     href,
-  }: ChildrenProps & { href: string }) => (
+    external,
+  }: ChildrenProps & { href: string; external?: boolean }) => (
     <a
       href={href}
-      className="flex h-12 w-full items-center justify-center px-5 rounded-full transition-colors md:w-[158px]
-                 border border-solid border-black/[.08] hover:border-transparent 
-                 hover:bg-black/[.04] dark:border-white/[.145] 
-                 dark:hover:bg-[#1a1a1a]"
+      target={external ? "_blank" : undefined}
+      rel={external ? "noopener noreferrer" : undefined}
+      className="
+      inline-flex h-12 w-full items-center justify-center gap-2
+      rounded-full px-6 transition-all duration-200
+      sm:w-[170px]
+
+      /* 기본 톤: 글라스 */
+      bg-white/[0.06] text-zinc-100
+      border border-white/[0.14]
+      shadow-sm
+
+      /* Hover: '보더/광택' 변화 */
+      hover:bg-white/[0.10]
+      hover:border-white/[0.22]
+      hover:-translate-y-[1px]
+
+      /* Active */
+      active:translate-y-0 active:bg-white/[0.12]
+
+      /*  Focus */
+      focus:outline-none focus-visible:ring-2 focus-visible:ring-white/[0.25]
+    "
     >
       {children}
     </a>
@@ -150,11 +157,39 @@ export const UI = {
 
   CTAIcon: () => (
     <Image
-      className="dark:invert"
+      className="opacity-90"
       src="/github-mark.svg"
       alt="GitHub"
       width={16}
       height={16}
     />
+  ),
+
+  CTAContact: ({ children }: ChildrenProps) => (
+    <div
+      className="
+      mt-6 flex w-full items-center gap-2
+      text-sm text-zinc-400
+      justify-center sm:justify-start
+    "
+    >
+      {children}
+    </div>
+  ),
+
+  CTAContactLabel: ({ children }: ChildrenProps) => (
+    <span className="text-zinc-500">{children}:</span>
+  ),
+
+  CTAContactLink: ({ children, href }: ChildrenProps & { href: string }) => (
+    <a
+      href={href}
+      className="
+      underline underline-offset-4 transition-colors
+      hover:text-zinc-200
+    "
+    >
+      {children}
+    </a>
   ),
 };

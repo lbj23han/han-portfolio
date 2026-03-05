@@ -3,7 +3,8 @@ import type { I18nDict } from "@/lib/i18n";
 export const LINKS = {
   github: "https://github.com/lbj23han",
   projects: "/projects",
-  // blog: "/blog",
+  blog: "https://velog.io/@creyon0215/",
+  email: "ljhan0215@gmail.com",
 } as const;
 
 export const HOME_TEXT: I18nDict<{
@@ -44,14 +45,20 @@ export const HOME_TEXT: I18nDict<{
 
 export const CTA_TEXT: I18nDict<{
   github: string;
+  blog: string;
   projects: string;
+  emailLabel: string;
 }> = {
   ko: {
     github: "GitHub",
-    projects: "프로젝트 보기",
+    blog: "Blog",
+    projects: "View Projects",
+    emailLabel: "Email",
   },
   en: {
     github: "GitHub",
+    blog: "Blog",
     projects: "View Projects",
+    emailLabel: "Email",
   },
 } as const;
