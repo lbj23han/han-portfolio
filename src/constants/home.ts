@@ -5,6 +5,7 @@ export const LINKS = {
   projects: "/projects",
   blog: "https://velog.io/@creyon0215/",
   email: "ljhan0215@gmail.com",
+  linkedin: "https://www.linkedin.com/in/lbj23han/",
 } as const;
 
 export const HOME_TEXT: I18nDict<{
@@ -47,18 +48,21 @@ export const CTA_TEXT: I18nDict<{
   github: string;
   blog: string;
   projects: string;
+  linkedin: string;
   emailLabel: string;
 }> = {
   ko: {
     github: "GitHub",
     blog: "Blog",
-    projects: "View Projects",
+    projects: "My Projects",
+    linkedin: "LinkedIn",
     emailLabel: "Email",
   },
   en: {
     github: "GitHub",
     blog: "Blog",
-    projects: "View Projects",
+    projects: "My Projects",
+    linkedin: "LinkedIn",
     emailLabel: "Email",
   },
 } as const;

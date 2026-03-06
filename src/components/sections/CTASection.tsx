@@ -24,6 +24,9 @@ export function CTASection() {
         <UI.CTAButtonPrimary href={LINKS.blog} external>
           {cta.blog}
         </UI.CTAButtonPrimary>
+        <UI.CTAButtonPrimary href={LINKS.linkedin} external>
+          {cta.linkedin}
+        </UI.CTAButtonPrimary>
       </UI.CTAWrapper>
 
       <UI.CTAContact>

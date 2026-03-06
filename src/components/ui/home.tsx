@@ -132,7 +132,7 @@ export const UI = {
       className="
       inline-flex h-12 w-full items-center justify-center gap-2
       rounded-full px-6 transition-all duration-200
-      sm:w-[170px]
+      sm:w-[147px]
 
       /* 기본 톤: 글라스 */
       bg-white/[0.06] text-zinc-100
