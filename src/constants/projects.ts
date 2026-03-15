@@ -73,6 +73,7 @@ export const projects: Project[] = [
       "Supabase",
       "PWA",
       "OpenAI API",
+      "LLM Integration",
     ],
     status: "in-progress",
     url: "https://nescafe-admin-pwa.vercel.app",
@@ -108,6 +109,10 @@ export const projects: Project[] = [
       {
         ko: "AI Helper: 자연어 입력 → 미리보기 → 확인 → QueryString 프리필(‘AI가 직접 저장하지 않는’ 안전 정책)",
         en: "AI Helper: natural language → preview → confirm → querystring prefill (a safety policy where AI never saves directly).",
+      },
+      {
+        ko: "OpenAI API 기반 LLM을 활용해 예약 의도 파싱, 날짜/인원/메뉴/금액 구조화, 입력 전 미리보기 생성 흐름을 설계했습니다.",
+        en: "Used an OpenAI API-based LLM to design a flow for parsing reservation intents, structuring date/party size/menu/amount fields, and generating a preview before submission.",
       },
       {
         ko: "Quick Chips 등 입력 UX 개선으로 키보드 의존도 감소",
