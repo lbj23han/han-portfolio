@@ -73,7 +73,7 @@ export const projects: Project[] = [
       "Supabase",
       "PWA",
       "OpenAI API",
-      "LLM Integration",
+      "LLM",
     ],
     status: "in-progress",
     url: "https://nescafe-admin-pwa.vercel.app",
