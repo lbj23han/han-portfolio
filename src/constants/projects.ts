@@ -152,6 +152,60 @@ export const projects: Project[] = [
   },
   {
     name: {
+      ko: "나만의 영양코치",
+      en: "My Nutrition Coach",
+    },
+    description: {
+      ko: "GPT-4o Vision + Supabase Edge Functions 기반 AI 영양 관리 앱. 사진 촬영·텍스트 입력으로 식단을 기록하고 AI 코치와 실시간 채팅으로 개인화 식단 조언을 받는 크로스플랫폼 앱.",
+      en: "An AI nutrition tracking app built on GPT-4o Vision and Supabase Edge Functions. Log meals by photo or text, and get personalized coaching via real-time AI chat — running on iOS, Android, and Web from a single codebase.",
+    },
+    tech: [
+      "Expo",
+      "React Native",
+      "TypeScript",
+      "Supabase",
+      "OpenAI API",
+      "React Native Web",
+      "PWA",
+      "Vercel",
+    ],
+    status: "in-progress",
+    url: "https://nutrition-coach-han.vercel.app",
+    github: "https://github.com/lbj23han/nutrition-coach",
+    detail: [
+      {
+        ko: "카메라로 음식을 찍으면 GPT-4o Vision이 음식 종류·중량·칼로리·단백질·탄수화물·지방을 자동 분석해 바로 기록하는 파이프라인을 설계했습니다.",
+        en: "Designed a pipeline where GPT-4o Vision automatically identifies food type, portion, and full macro breakdown from a photo and logs it instantly.",
+      },
+      {
+        ko: "OpenAI API 키를 Supabase Edge Function 서버 시크릿으로 격리해 클라이언트 번들에 노출되지 않도록 보안 구조를 설계했습니다.",
+        en: "Secured the OpenAI API key by isolating it as a Supabase Edge Function secret, keeping it entirely out of the client bundle.",
+      },
+      {
+        ko: "사용자당 AI 호출 10회 제한을 서버 사이드(api_usage 테이블 + HTTP 429)로 구현해 비용 제어 구조를 갖췄습니다.",
+        en: "Implemented server-side per-user AI rate limiting (api_usage table + HTTP 429) to control costs without relying on the client.",
+      },
+      {
+        ko: "Mifflin-St Jeor / Katch-McArdle 공식으로 BMR·TDEE를 계산하고 6가지 목표(다이어트/벌크업 등)에 따라 매크로 목표를 자동 설정하는 개인화 엔진을 구현했습니다.",
+        en: "Built a personalization engine that calculates BMR/TDEE via Mifflin-St Jeor or Katch-McArdle and auto-sets macro targets based on 6 fitness goals.",
+      },
+      {
+        ko: "FoodCamera를 .native.tsx / .tsx로 분리해 expo-camera를 웹 번들에서 완전히 제외하는 플랫폼 분기 번들링 구조를 적용했습니다.",
+        en: "Split FoodCamera into .native.tsx/.tsx so expo-camera is fully excluded from the web bundle, using Metro's platform extension resolution.",
+      },
+      {
+        ko: "Expo + React Native Web으로 iOS · Android · Web(Vercel PWA) 단일 코드베이스 배포를 구현했습니다.",
+        en: "Delivered iOS, Android, and Web (Vercel PWA) from a single codebase using Expo and React Native Web.",
+      },
+      {
+        ko: "12주 체중 예측 모델(TDEE 델타 기반)과 주간 칼로리 차트·매크로 분석을 통해 목표 달성 여정을 시각화했습니다.",
+        en: "Visualized goal progress with a 12-week weight forecast model (TDEE delta–based) and weekly calorie/macro charts.",
+      },
+    ],
+    media: [],
+  },
+  {
+    name: {
       ko: "FcSquadMeter",
       en: "FcSquadMeter",
     },
