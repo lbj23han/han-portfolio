@@ -281,8 +281,13 @@ export const projects: Project[] = [
     media: [
       {
         type: "image",
-        src: "/media/fcsquadmeter/flow.png",
+        src: "/media/fcsquadmeter/flow-1.jpeg",
         alt: "FcSquadMeter main screen",
+      },
+      {
+        type: "image",
+        src: "/media/fcsquadmeter/flow-2.jpeg",
+        alt: "FcSquadMeter Results screen",
       },
     ],
   },
