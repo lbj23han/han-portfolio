@@ -202,7 +202,17 @@ export const projects: Project[] = [
         en: "Visualized goal progress with a 12-week weight forecast model (TDEE delta–based) and weekly calorie/macro charts.",
       },
     ],
-    media: [],
+    media: [
+      { type: "image", src: "/media/nutrition-coach/001.png", alt: "Nutrition Coach 001" },
+      { type: "image", src: "/media/nutrition-coach/002.png", alt: "Nutrition Coach 002" },
+      { type: "image", src: "/media/nutrition-coach/003.png", alt: "Nutrition Coach 003" },
+      { type: "image", src: "/media/nutrition-coach/004.png", alt: "Nutrition Coach 004" },
+      { type: "image", src: "/media/nutrition-coach/005.png", alt: "Nutrition Coach 005" },
+      { type: "image", src: "/media/nutrition-coach/006.png", alt: "Nutrition Coach 006" },
+      { type: "image", src: "/media/nutrition-coach/007.png", alt: "Nutrition Coach 007" },
+      { type: "image", src: "/media/nutrition-coach/008.png", alt: "Nutrition Coach 008" },
+      { type: "image", src: "/media/nutrition-coach/009.png", alt: "Nutrition Coach 009" },
+    ],
   },
   {
     name: {
