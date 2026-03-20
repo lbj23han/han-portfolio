@@ -17,30 +17,30 @@ export const HOME_TEXT: I18nDict<{
   recentDesc: string;
 }> = {
   ko: {
-    title: "프론트엔드 개발자 Han입니다 👋",
-    meta: "서울 기반 · 프론트엔드 포지션 지원 중입니다.",
+    title: "운영 문제를 서비스 구조로 풀어내는 Han입니다 👋",
+    meta: "서울 기반 · 서비스 운영/개발 관련 포지션에 지원 중입니다.",
     desc:
-      "가족/소규모 비즈니스처럼 실제 운영에 쓰이는 PWA를 설계·구현합니다.\n" +
-      "Next.js · React · TypeScript 기반으로 모바일 우선 UX와 인증/권한(RLS)에 맞춘 안정적인 데이터 흐름을 설계하고,\n" +
-      "복잡한 입력을 ‘미리보기 → 확인’ 플로우로 안전하게 단순화하는 제품 경험을 만듭니다.",
+      "실제 운영 환경에서 반복적으로 발생하는 문제를 발견하고,\n" +
+      "사용자 흐름과 데이터 구조를 함께 고려해 더 단순하고 안정적인 서비스로 개선하는 데 집중해 왔습니다.\n" +
+      "기술 구현 자체보다, 서비스가 실제로 더 잘 작동하도록 만드는 구조 설계에 관심이 많습니다.",
     stackTags: ["Next.js", "React", "TypeScript", "PWA"],
     recentTitle: "최근 작업 · nescafe-ledger",
     recentDesc:
-      "가족 운영 카페에서 실제 사용하는 예치금/미수금/예약 장부 PWA에\n" +
-      "AI Helper(prefill type)를 도입해 예약 메시지를 구조화된 폼 데이터로 변환하고 있습니다.",
+      "가족 운영 카페에서 실제 사용하는 예약·예치금·미수금 관리 PWA를 운영 관점에서 개선하며,\n" +
+      "자연어 예약 입력을 구조화된 데이터로 바꾸는 AI 기능과 검증 흐름을 설계했습니다.",
   },
   en: {
-    title: "I'm Han, a Frontend Engineer 👋",
-    meta: "Based in Seoul · Open to frontend roles.",
+    title:
+      "I'm Han, turning operational problems into better service structures 👋",
+    meta: "Based in Seoul · Open to service operations/development related roles.",
     desc:
-      "I design and build PWAs used in real operations—like family-run and small businesses.\n" +
-      "With Next.js · React · TypeScript, I focus on mobile-first UX and reliable data flows aligned with auth/permissions (RLS),\n" +
-      "and turn complex inputs into a safe “Preview → Confirm” product experience.",
+      "I focus on identifying recurring problems in real operations and improving them through better user flows and data structures.\n" +
+      "More than just building features, I care about designing services that work more clearly, safely, and effectively in practice.",
     stackTags: ["Next.js", "React", "TypeScript", "PWA"],
     recentTitle: "Recent work · nescafe-ledger",
     recentDesc:
-      "For a real café deposit/receivables/reservation ledger PWA,\n" +
-      "I'm adding an AI Helper (prefill type) that converts natural-language reservation messages into structured form data.",
+      "For a reservation/deposit/receivables PWA used in a real family-run café,\n" +
+      "I designed an AI-assisted flow that converts natural-language reservation input into structured data with a verification step.",
   },
 } as const;
 
