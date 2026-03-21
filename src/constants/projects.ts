@@ -152,6 +152,86 @@ export const projects: Project[] = [
   },
   {
     name: {
+      ko: "혜택줍줍",
+      en: "Benefit Finder",
+    },
+    description: {
+      ko: "나이·지역·직업·소득·가구 유형을 입력하면 받을 수 있는 정부 복지 혜택을 자동 추천해주는 모바일 PWA. 복지로 API + Claude AI로 300개+ 정책을 매일 수집·보강.",
+      en: "A mobile PWA that auto-recommends government welfare benefits based on age, region, occupation, income, and household type. Fetches and enriches 300+ policies daily via 복지로 API + Claude AI.",
+    },
+    tech: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS v4",
+      "Claude AI (Haiku)",
+      "GitHub Actions",
+      "PWA",
+    ],
+    status: "in-progress",
+    url: "https://findmymoney.vercel.app",
+    github: "https://github.com/lbj23han/benefit-finder",
+    media: [
+      {
+        type: "image",
+        src: "/media/benefit-finder/1.jpeg",
+        alt: "혜택줍줍 서비스 화면 1",
+      },
+      {
+        type: "image",
+        src: "/media/benefit-finder/2.jpeg",
+        alt: "혜택줍줍 서비스 화면 2",
+      },
+      {
+        type: "image",
+        src: "/media/benefit-finder/3.jpeg",
+        alt: "혜택줍줍 서비스 화면 3",
+      },
+      {
+        type: "image",
+        src: "/media/benefit-finder/4.jpeg",
+        alt: "혜택줍줍 서비스 화면 4",
+      },
+      {
+        type: "image",
+        src: "/media/benefit-finder/UserFlow.jpeg",
+        alt: "혜택줍줍 User Flow",
+      },
+      {
+        type: "image",
+        src: "/media/benefit-finder/WireFrame.jpeg",
+        alt: "혜택줍줍 Wireframe",
+      },
+      {
+        type: "image",
+        src: "/media/benefit-finder/KPI.jpeg",
+        alt: "혜택줍줍 KPI",
+      },
+    ],
+    detail: [
+      {
+        ko: "문제 정의: 정부 복지 혜택은 300개 이상 존재하지만 자격 조건이 복잡하고 정보가 복지로·각 지자체에 분산되어 있어, 실제 수혜 가능 여부를 개인이 스스로 판단하기 어렵다는 문제에서 출발했습니다.",
+        en: "Problem: 300+ government benefits exist, but eligibility rules are complex and information is scattered across multiple portals — making it nearly impossible for individuals to self-assess what they can actually claim.",
+      },
+      {
+        ko: "KPI: 30대 서울 재직자·20대 학생·60대 부부 등 5개 대표 프로필 시뮬레이션 기준 추천 정확도 약 89–90% 달성. 군인·농업인 등 특수 대상 하드블록으로 오추천율을 대폭 낮췄습니다.",
+        en: "KPI: Achieved ~89–90% recommendation accuracy across 5 representative profile simulations (employed 30s in Seoul, student 20s, elderly couple, etc.). Hard-blocking niche targets (military, farmers, etc.) significantly reduced false positives.",
+      },
+      {
+        ko: "핵심 알고리즘 설계: 적격성(×0.5) · 실용성(×0.3) · 혜택가치(×0.2) 3요소 점수화 + 저소득·청년 1인가구·재직자·자영업자 등 프로필 맥락별 우선순위 가중치를 설계해, 단순 키워드 매칭이 아닌 '맥락 기반 추천'을 구현했습니다.",
+        en: "Algorithm design: A 3-factor score (eligibility ×0.5 · practicality ×0.3 · benefit value ×0.2) plus profile-context multipliers for low-income, young singles, employees, and self-employed — delivering context-aware recommendations, not just keyword matching.",
+      },
+      {
+        ko: "자동화 파이프라인: GitHub Actions가 매일 새벽 복지로 공식 API로 최신 정책을 수집하고, Claude AI(Haiku)가 대상 특성·수혜 금액·일반 관련도를 배치 보강해 Vercel 자동 재배포까지 이어지는 완전 자동화 데이터 갱신 구조를 설계했습니다.",
+        en: "Automated pipeline: GitHub Actions fetches the latest policies from the official 복지로 API every morning, Claude AI (Haiku) batch-enriches each policy with target traits, benefit amounts, and relevance scores, and Vercel auto-redeploys — a fully automated data refresh cycle.",
+      },
+      {
+        ko: "사용자 가치: 5개 항목 입력만으로 '신청 가능성 높음' 배지 포함 맞춤 혜택 목록을 즉시 제공. 북마크·키워드 검색·카테고리 필터·정렬 등으로 탐색 마찰을 최소화했습니다.",
+        en: "User value: Just 5 profile inputs instantly surface a ranked benefit list with 'High eligibility' badges, bookmarking, keyword search, category filters, and sort options — minimizing friction to zero.",
+      },
+    ],
+  },
+  {
+    name: {
       ko: "나만의 영양코치",
       en: "My Nutrition Coach",
     },
