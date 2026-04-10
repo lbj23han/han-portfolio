@@ -14,8 +14,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "HAN's Portfolio",
-  description: "FE Engineer HAN's portfolio website built with Next.js 13.",
+  title: "Han Portfolio",
+  description:
+    "웹 애플리케이션과 자동화 시스템으로 실제 운영 문제를 해결하는 Han의 포트폴리오.",
 };
 
 export default function RootLayout({
