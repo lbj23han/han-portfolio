@@ -98,6 +98,155 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    slug: "updown-brief",
+    tier: "featured",
+    name: {
+      ko: "UpDown Brief",
+      en: "UpDown Brief",
+    },
+    tagline: {
+      ko: "뉴스와 경제 지표를 사용자가 이해할 수 있는 시장·생활 영향 브리핑으로 바꾸는 앱인토스 미니앱",
+      en: "An Apps in Toss mini app that turns news and market indicators into understandable market and daily-life briefings.",
+    },
+    description: {
+      ko: "경제 뉴스, 환율·금리 흐름, 시장 지표를 모바일에서 빠르게 읽을 수 있는 브리핑 경험으로 재구성했습니다. 직접 해석, 프리미엄 멤버십, 분석권, 포인트 보상, 광고 수익화를 함께 연결한 운영형 서비스입니다.",
+      en: "A mobile-first briefing service that reframes economic news, FX/rate movement, and market signals into readable insights, with direct analysis, premium membership, tickets, reward points, and ad monetization.",
+    },
+    role: {
+      ko: "제품 기획, 뉴스 해석 UX, 앱인토스 SDK 연동, 인앱 결제/광고/포인트 서버 흐름 설계",
+      en: "Product planning, news interpretation UX, Apps in Toss SDK integration, and payment/ad/reward server flow design.",
+    },
+    tech: [
+      "React",
+      "TypeScript",
+      "Vite",
+      "Apps in Toss",
+      "Toss Ads",
+      "Supabase",
+      "Vercel Functions",
+      "OpenAI API",
+    ],
+    status: "in-progress",
+    year: "2026",
+    links: [
+      {
+        type: "live",
+        label: { ko: "서비스 보기", en: "Live" },
+        href: "https://updown-brief.vercel.app",
+      },
+    ],
+    highlights: [
+      {
+        ko: "뉴스를 단순 요약하지 않고, 코스피·환율·금리·생활 체감 영향으로 나눠 읽을 수 있게 구성했습니다.",
+        en: "Instead of summarizing news, it separates impact into market indices, FX/rates, and daily-life effects.",
+      },
+      {
+        ko: "앱인토스 환경에서 배너 광고, 보상형 광고, 인앱 결제, 상품 지급 완료 처리까지 실제 출시 흐름에 맞춰 연결했습니다.",
+        en: "Integrated banner ads, rewarded ads, in-app purchase, and product-grant completion for a real Apps in Toss launch flow.",
+      },
+      {
+        ko: "분석권, 프리미엄 30일 유지, 광고 리워드 포인트, 1시간 쿨타임을 서버 상태와 클라이언트 UX가 함께 맞물리도록 설계했습니다.",
+        en: "Designed tickets, 30-day premium access, ad reward points, and one-hour cooldowns across server state and client UX.",
+      },
+    ],
+    sections: [
+      {
+        title: { ko: "Overview", en: "Overview" },
+        items: [
+          {
+            ko: "경제 뉴스를 잘 모르는 사용자도 오늘의 시장 신호를 빠르게 이해할 수 있도록 만든 모바일 브리핑 서비스입니다.",
+            en: "A mobile briefing service for users who want to understand market signals without reading dense financial news.",
+          },
+          {
+            ko: "웹앱을 앱인토스 미니앱으로 확장하면서 검수, 샌드박스 테스트, AIT 번들 배포, SDK 제약까지 함께 다뤘습니다.",
+            en: "The web app was extended into an Apps in Toss mini app, covering review requirements, sandbox tests, AIT builds, and SDK constraints.",
+          },
+        ],
+      },
+      {
+        title: { ko: "Problem", en: "Problem" },
+        items: [
+          {
+            ko: "경제 뉴스는 많지만, 사용자는 그 뉴스가 내 투자·소비·환율·금리에 어떤 영향을 주는지 빠르게 파악하기 어렵습니다.",
+            en: "Economic news is abundant, but users struggle to quickly connect it to investing, spending, FX, and rates.",
+          },
+          {
+            ko: "수익화가 필요한 미니앱은 결제·광고·보상 정책이 UX를 해치지 않도록 설계해야 합니다.",
+            en: "A monetized mini app must connect payments, ads, and rewards without damaging the main user flow.",
+          },
+        ],
+      },
+      {
+        title: { ko: "Key Features", en: "Key Features" },
+        items: [
+          {
+            ko: "경제지수 대시보드, 뉴스 임팩트 카드, 환율·금리 데일리 리포트, 직접 뉴스 해석 기능",
+            en: "Market index dashboard, news impact cards, FX/rate daily reports, and direct news interpretation.",
+          },
+          {
+            ko: "프리미엄 멤버십, 분석권 구매, 출석/광고 포인트 보상, 보상형 광고 쿨타임",
+            en: "Premium membership, analysis-ticket purchase, attendance/ad reward points, and rewarded-ad cooldowns.",
+          },
+        ],
+      },
+      {
+        title: { ko: "Monetization / Operating Logic", en: "Monetization / Operating Logic" },
+        items: [
+          {
+            ko: "인앱 결제 성공 이후 `processProductGrant`와 서버 지급 API를 통해 프리미엄 권한 또는 분석권을 지급합니다.",
+            en: "After IAP success, `processProductGrant` and a server grant API assign premium access or analysis tickets.",
+          },
+          {
+            ko: "광고 보상은 하루 3회, 1회 30P, 1시간 쿨타임을 기준으로 중복 지급을 막습니다.",
+            en: "Ad rewards are limited to 3 per day, 30 points each, with a one-hour cooldown to prevent repeated claims.",
+          },
+          {
+            ko: "프리미엄은 30일 만료 시각을 서버에 저장해 기기 변경 이후에도 상태를 유지할 수 있게 했습니다.",
+            en: "Premium access stores a 30-day expiration server-side so access can survive device changes.",
+          },
+        ],
+      },
+      {
+        title: { ko: "AI Usage", en: "AI Usage" },
+        items: [
+          {
+            ko: "AI는 뉴스를 투자/생활 영향 구조로 변환하는 해석 레이어로 사용합니다.",
+            en: "AI is used as an interpretation layer that converts news into market and daily-life impact structure.",
+          },
+          {
+            ko: "홈 한줄평처럼 공통으로 소비되는 정보는 사용자별 호출이 아니라 서버 캐시/배치 업데이트 구조가 더 적합하다는 방향으로 정리했습니다.",
+            en: "Shared insights such as daily one-line comments are treated as server-cached or batch-updated content, not per-user runtime calls.",
+          },
+        ],
+      },
+      {
+        title: {
+          ko: "Edge Cases / Operational Considerations",
+          en: "Edge Cases / Operational Considerations",
+        },
+        items: [
+          {
+            ko: "인앱 결제에서 상품 지급 실패, 미결 주문 복원, 중복 지급 방지 같은 실제 출시 전 시나리오를 고려했습니다.",
+            en: "Considered production scenarios such as grant failure, pending-order restoration, and duplicate grant prevention.",
+          },
+          {
+            ko: "광고는 핵심 콘텐츠 사이에 자연스럽게 배치하고, 보상형 광고는 사용자가 명시적으로 선택할 때만 열리도록 했습니다.",
+            en: "Ads are placed between content sections, while rewarded ads are shown only after explicit user intent.",
+          },
+        ],
+      },
+      {
+        title: { ko: "KPI / What to measure", en: "KPI / What to measure" },
+        items: [
+          {
+            ko: "뉴스 상세 진입률, 직접 해석 사용률, 분석권 구매 전환, 프리미엄 전환, 광고 보상 완료율",
+            en: "News detail conversion, direct-analysis usage, ticket purchase conversion, premium conversion, and rewarded-ad completion.",
+          },
+        ],
+      },
+    ],
+  },
+  {
     slug: "public-policy-finder",
     tier: "featured",
     name: {
@@ -125,6 +274,8 @@ export const projects: Project[] = [
       "복지로 API",
       "정부24 API",
       "PWA",
+      "Apps in Toss",
+      "Toss Ads",
     ],
     status: "in-progress",
     year: "2026",
@@ -157,6 +308,10 @@ export const projects: Project[] = [
       {
         ko: "지역/구 단위 하드블록, 특수직군 필터, 신청 가능성 배지 등 오추천을 줄이는 운영 규칙을 함께 설계했습니다.",
         en: "Includes region hard-blocks, niche-target filters, and eligibility badges to reduce false positives.",
+      },
+      {
+        ko: "앱인토스 미니앱에서는 배너 광고를 홈/리스트/상세 흐름에 맞게 배치하고, lazy loading으로 과도한 동시 노출을 줄였습니다.",
+        en: "In the Apps in Toss version, banner ads are placed across home/list/detail flows with lazy loading to avoid excessive simultaneous impressions.",
       },
     ],
     sections: [
@@ -505,6 +660,8 @@ export const projects: Project[] = [
       "Kakao Local API",
       "Naver Search API",
       "OpenAI",
+      "Apps in Toss",
+      "Toss Ads",
     ],
     status: "in-progress",
     year: "2026",
@@ -537,6 +694,10 @@ export const projects: Project[] = [
       {
         ko: "몸매체크는 메인 서비스가 아니라, 운동 관심 유저가 빠르게 들어와 결과를 보고 헬린이맵으로 이어질 수 있게 돕는 유입 도구입니다.",
         en: "MomeCheck is not the main product; it acts as a lightweight entry point that can funnel users into Hellinimap.",
+      },
+      {
+        ko: "앱인토스 버전에서는 몸매체크 결과 화면에 전면형 광고를 연결해 핵심 입력 흐름 이후에만 수익화가 발생하도록 배치했습니다.",
+        en: "In the Apps in Toss version, interstitial ads are shown only on the MomeCheck result screen, after the core input flow is complete.",
       },
     ],
     sections: [
@@ -656,6 +817,43 @@ export const projects: Project[] = [
             en: "Future work will deepen scoring and badge policies around beginner-friendliness, value, and introvert-friendly discovery.",
           },
         ],
+      },
+    ],
+  },
+  {
+    slug: "kkot-map",
+    tier: "other",
+    name: {
+      ko: "꽃놀이맵",
+      en: "Kkot Map",
+    },
+    tagline: {
+      ko: "꽃구경 장소 탐색을 지도·리스트·커뮤니티 흐름으로 묶은 앱인토스 지도형 미니앱",
+      en: "An Apps in Toss map mini app that connects flower-viewing discovery through map, list, and community flows.",
+    },
+    description: {
+      ko: "봄철 나들이 사용자가 꽃구경 장소를 지도에서 탐색하고, 리스트와 상세 패널을 오가며 빠르게 판단할 수 있도록 만든 모바일 지도 서비스입니다.",
+      en: "A mobile map service for finding flower-viewing spots, moving between map, list, and detail panels with low friction.",
+    },
+    role: {
+      ko: "지도 탐색 UX, 리스트/상세 광고 배치, 앱인토스 AIT 빌드 대응",
+      en: "Map discovery UX, list/detail ad placement, and Apps in Toss AIT build support.",
+    },
+    tech: ["Next.js", "React", "TypeScript", "Map UI", "Apps in Toss", "Toss Ads"],
+    status: "in-progress",
+    year: "2026",
+    highlights: [
+      {
+        ko: "지도 하단, 리스트 중간, 커뮤니티 영역 등 사용자의 탐색 행동을 가리지 않는 위치에 광고를 배치했습니다.",
+        en: "Placed ads at non-blocking points such as map bottom, list intervals, and community surfaces.",
+      },
+      {
+        ko: "지도형 서비스 특성상 핵심 조작 영역을 침범하지 않도록 배너 노출과 닫기 동작을 함께 고려했습니다.",
+        en: "For a map-first service, banner display and dismiss behavior were designed to avoid blocking core interactions.",
+      },
+      {
+        ko: "앱인토스 AIT 빌드와 미니앱 테스트 흐름까지 맞추며 지도 서비스의 출시 전 제약을 점검했습니다.",
+        en: "Handled AIT builds and mini-app testing constraints for a map-based service.",
       },
     ],
   },

@@ -31,7 +31,7 @@ export const HOME_TEXT: I18nDict<{
   aboutLabel: string;
 }> = {
   ko: {
-    eyebrow: "Service Owner × AI Native Builder",
+    eyebrow: "Product Builder × AI Automation",
     title: "웹 애플리케이션과 자동화 시스템으로 실제 운영 문제를 해결하는 Han입니다.",
     meta: "서울 기반 · 프론트엔드/풀스택 경계에서 서비스 구조와 운영 흐름을 함께 설계합니다.",
     desc:
@@ -42,11 +42,12 @@ export const HOME_TEXT: I18nDict<{
       "TypeScript",
       "Supabase",
       "AI Automation",
+      "Apps in Toss",
       "Mobile-first UX",
     ],
     recentTitle: "최근 초점",
     recentDesc:
-      "대표작 3개를 중심으로 운영 구조, 추천 로직, AI 보조 레이어가 드러나는 포트폴리오 형태로 다시 정리하고 있습니다.",
+      "대표작을 중심으로 운영 구조, 추천 로직, AI 보조 레이어, 미니앱 수익화 경험이 드러나는 포트폴리오 형태로 다시 정리하고 있습니다.",
     capabilityCards: [
       {
         title: "문제 정의",
@@ -63,7 +64,7 @@ export const HOME_TEXT: I18nDict<{
     ],
     selectedTitle: "Selected Projects",
     selectedDesc:
-      "대표작 3개는 문제 정의, 운영 로직, AI 활용, 실제 실행 구조가 드러나도록 더 깊게 정리했습니다.",
+      "대표작은 문제 정의, 운영 로직, AI 활용, 수익화, 실제 실행 구조가 드러나도록 더 깊게 정리했습니다.",
     otherTitle: "Other Projects",
     otherDesc: "대표작을 가리지 않도록, 역할과 핵심만 짧게 정리한 작업들입니다.",
     privateTitle: "Private Automation",
@@ -75,7 +76,7 @@ export const HOME_TEXT: I18nDict<{
     aboutLabel: "How I work",
   },
   en: {
-    eyebrow: "Service Owner × AI Native Builder",
+    eyebrow: "Product Builder × AI Automation",
     title: "I build web apps and automation systems that solve real operational problems.",
     meta: "Based in Seoul · working across frontend, product structure, and operational systems.",
     desc:
@@ -86,11 +87,12 @@ export const HOME_TEXT: I18nDict<{
       "TypeScript",
       "Supabase",
       "AI Automation",
+      "Apps in Toss",
       "Mobile-first UX",
     ],
     recentTitle: "Current focus",
     recentDesc:
-      "I am restructuring this portfolio around three featured projects so that operating logic, recommendation design, and AI assistance are easier to read.",
+      "I am restructuring this portfolio around featured projects so that operating logic, recommendation design, AI assistance, and mini-app monetization are easier to read.",
     capabilityCards: [
       {
         title: "Problem framing",
@@ -107,7 +109,7 @@ export const HOME_TEXT: I18nDict<{
     ],
     selectedTitle: "Selected Projects",
     selectedDesc:
-      "These three projects are structured to show problem definition, operating logic, AI usage, and real execution.",
+      "These projects are structured to show problem definition, operating logic, AI usage, monetization, and real execution.",
     otherTitle: "Other Projects",
     otherDesc: "Smaller supporting projects, summarized briefly so they do not overshadow the main work.",
     privateTitle: "Private Automation",
