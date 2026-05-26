@@ -452,6 +452,174 @@ export const projects: Project[] = [
     ],
   },
   {
+    slug: "savewithpet",
+    tier: "featured",
+    name: {
+      ko: "냥비하지말개",
+      en: "SaveWithPet",
+    },
+    tagline: {
+      ko: "소비 기록을 반려 캐릭터 성장, AI 사진 캐릭터, 앱인토스 결제 흐름으로 묶은 습관형 가계부 미니앱",
+      en: "A habit-forming Apps in Toss ledger where spending records grow a pet character, including AI photo characters and IAP.",
+    },
+    description: {
+      ko: "가계부를 꾸준히 쓰기 어렵다는 문제를 캐릭터 성장과 보상 구조로 풀었습니다. 사용자는 지출·저축·수입을 기록하고, 코인과 간식으로 캐릭터를 키우며, 자신의 반려동물 사진을 AI 캐릭터로 만들어 컬렉션에 추가할 수 있습니다.",
+      en: "SaveWithPet reframes personal finance tracking as character care. Users record spending, savings, and income, earn coins and snacks, and can turn their own pet photo into an AI-generated collectible character.",
+    },
+    role: {
+      ko: "제품 기획, 캐릭터 성장/상점 정책, 앱인토스 로그인·IAP·AIT 출시 흐름, Supabase/RLS/API 설계",
+      en: "Product planning, character growth/shop policy, Apps in Toss login/IAP/AIT launch flow, and Supabase/RLS/API design.",
+    },
+    tech: [
+      "React",
+      "TypeScript",
+      "Vite",
+      "Apps in Toss",
+      "Supabase",
+      "Vercel Functions",
+      "OpenAI Images",
+      "Toss Login",
+      "Toss IAP",
+    ],
+    status: "in-progress",
+    year: "2026",
+    links: [
+      {
+        type: "live",
+        label: { ko: "서비스 보기", en: "Live" },
+        href: "https://savewithpet.vercel.app",
+      },
+      {
+        type: "github",
+        label: { ko: "GitHub", en: "GitHub" },
+        href: "https://github.com/lbj23han/savewithpet",
+      },
+    ],
+    highlights: [
+      {
+        ko: "기록 보상, 출석 체크, 무료 간식 쿨타임, 친밀도 감소/회복을 연결해 가계부를 다시 여는 이유를 만들었습니다.",
+        en: "Connected entry rewards, attendance checks, free-snack cooldowns, and intimacy decay/recovery so users have reasons to return.",
+      },
+      {
+        ko: "반려동물 사진을 고퀄 PNG 캐릭터로 생성하고, 결과 수정 불가/최대 5개 보유/삭제 후 재생성 같은 결제 정책까지 함께 설계했습니다.",
+        en: "Designed AI pet-photo character generation with clear product rules: no post-editing, max 5 owned AI characters, delete before regenerating.",
+      },
+      {
+        ko: "앱인토스 출시를 기준으로 Toss Login, IAP 2회권·5회권, 지급 API, 중복 지급 방지, AIT 빌드까지 한 흐름으로 검증했습니다.",
+        en: "Prepared the Apps in Toss launch path end-to-end: Toss Login, 2/5-credit IAP, grant API, duplicate-grant prevention, and AIT builds.",
+      },
+    ],
+    sections: [
+      {
+        title: { ko: "Overview", en: "Overview" },
+        items: [
+          {
+            ko: "냥비하지말개는 돈 관리가 숙제처럼 느껴지는 사용자를 위해, 소비 기록을 캐릭터 성장과 돌봄 경험으로 바꾼 미니앱입니다.",
+            en: "SaveWithPet is a mini app that turns personal finance tracking into a character-care loop for users who find ledgers burdensome.",
+          },
+          {
+            ko: "해커톤 제출과 실제 출시를 동시에 고려해 앱인토스 제출 이미지, 약관 페이지, AIT 빌드, 서버 환경변수까지 준비했습니다.",
+            en: "It was prepared for both a hackathon submission and real launch, including store assets, terms page, AIT build, and server environment setup.",
+          },
+        ],
+      },
+      {
+        title: { ko: "Problem", en: "Problem" },
+        items: [
+          {
+            ko: "가계부는 필요하지만 기록 자체가 재미없고, 사용자가 며칠 지나면 다시 열 이유가 약해집니다.",
+            en: "Ledgers are useful but boring; after a few days users often have little reason to reopen them.",
+          },
+          {
+            ko: "앱인토스 미니앱은 로그인, 결제, 지급 완료, 이미지 생성 같은 기능이 서로 끊기면 바로 출시 안정성이 떨어집니다.",
+            en: "For an Apps in Toss mini app, login, payment, product grant, and image generation must work together to be launch-ready.",
+          },
+        ],
+      },
+      {
+        title: { ko: "Key Features", en: "Key Features" },
+        items: [
+          {
+            ko: "지출/저축/수입 기록, 카테고리 예산, 출석 보상, 무료 간식, 캐릭터 친밀도와 레벨 성장",
+            en: "Expense/saving/income records, category budgets, attendance rewards, free snacks, intimacy, and character leveling.",
+          },
+          {
+            ko: "옷장/간식/캐릭터 상점, 기본 캐릭터 구매, AI 캐릭터 생성권 결제, 캐릭터 컬렉션 관리",
+            en: "Wardrobe/snack/character shop, preset character purchases, AI-generation credits, and character collection management.",
+          },
+        ],
+      },
+      {
+        title: { ko: "AI Usage", en: "AI Usage" },
+        items: [
+          {
+            ko: "사용자 반려동물 사진을 투명 배경의 single PNG 캐릭터로 생성하고, 앱에서는 scale과 이펙트로 감정을 표현합니다.",
+            en: "Pet photos are converted into transparent single-PNG characters, while the app expresses state through scale and effects.",
+          },
+          {
+            ko: "초기에는 body frame/파츠 편집을 실험했지만, 출시 안정성을 위해 전체 캐릭터 PNG + 비접촉형 꾸미기로 범위를 조정했습니다.",
+            en: "After experimenting with body-frame and part edits, the launch scope moved to full-character PNGs plus non-contact decorations.",
+          },
+        ],
+      },
+      {
+        title: { ko: "Monetization / Operating Logic", en: "Monetization / Operating Logic" },
+        items: [
+          {
+            ko: "AI 캐릭터 생성은 2회 550원, 5회 1,100원 상품으로 구성하고, 결제 완료 후 서버 지급 API가 생성권을 충전합니다.",
+            en: "AI character generation is sold as 2 credits for KRW 550 or 5 credits for KRW 1,100, granted through a server API after IAP.",
+          },
+          {
+            ko: "IAP orderId 중복 지급 방지, 실제 Toss SKU 매핑, pending order 복구까지 출시 전 결제 흐름을 고려했습니다.",
+            en: "The IAP flow accounts for duplicate order prevention, real Toss SKU mapping, and pending-order restoration.",
+          },
+        ],
+      },
+      {
+        title: {
+          ko: "Edge Cases / Operational Considerations",
+          en: "Edge Cases / Operational Considerations",
+        },
+        items: [
+          {
+            ko: "로그인 이후 기존 localStorage 상태가 남아 있어 바로 기본 캐릭터 홈으로 넘어가는 문제를 온보딩 게이트로 보정했습니다.",
+            en: "Fixed a launch-blocking case where stale localStorage could bypass onboarding and drop users into the default character home.",
+          },
+          {
+            ko: "사진 생성 중에는 컬렉션에 진행 상태를 보여주고, 마음에 들지 않으면 수정이 아니라 삭제 후 재생성하도록 정책을 명확히 했습니다.",
+            en: "Generation progress is surfaced in the collection, and unsatisfactory results follow a delete-and-regenerate policy rather than editing.",
+          },
+        ],
+      },
+      {
+        title: { ko: "KPI / What to measure", en: "KPI / What to measure" },
+        items: [
+          {
+            ko: "첫 기록 완료율, 3일 재방문율, 캐릭터 선택 완료율, AI 생성권 구매 전환, 간식/상점 사용률",
+            en: "First-entry completion, 3-day return rate, onboarding completion, AI-credit purchase conversion, and snack/shop usage.",
+          },
+        ],
+      },
+    ],
+    media: [
+      {
+        type: "image",
+        src: "/media/savewithpet/thumb-1.png",
+        alt: "SaveWithPet home screen",
+      },
+      {
+        type: "image",
+        src: "/media/savewithpet/thumb-2.png",
+        alt: "SaveWithPet character collection and shop",
+      },
+      {
+        type: "image",
+        src: "/media/savewithpet/thumb-3.png",
+        alt: "SaveWithPet ledger and rewards",
+      },
+    ],
+  },
+  {
     slug: "cafe-ledger",
     tier: "featured",
     name: {
