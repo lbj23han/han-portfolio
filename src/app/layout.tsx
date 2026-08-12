@@ -14,9 +14,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Han Portfolio",
+  title: "Han Lee | Market, Content & Product",
   description:
-    "웹 애플리케이션과 자동화 시스템으로 실제 운영 문제를 해결하는 Han의 포트폴리오.",
+    "무엇이 필요하고 무엇이 팔리는지 찾아 콘텐츠와 서비스로 만드는 이준한의 포트폴리오.",
 };
 
 export default function RootLayout({
