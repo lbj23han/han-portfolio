@@ -30,9 +30,9 @@ export const HOME_TEXT: I18nDict<{
   archiveDesc: string;
 }> = {
   ko: {
-    eyebrow: "MARKET SENSE × EXECUTION × GROWTH",
-    title: "무엇이 필요하고 무엇이 팔리는지 찾아, 콘텐츠와 서비스로 만듭니다",
-    meta: "유튜브 채널 90일 조회수 150만+ · 구독자 6,000명+ · 첫 달 수익 $3,500+ 달성. 여러 웹·앱 서비스를 기획·출시하고 유료 전환까지 직접 설계했습니다.",
+    eyebrow: "MARKET × SYSTEM × GROWTH",
+    title: "수요를 찾고 시스템을 만들며, 직접 운영해 성과로 검증합니다",
+    meta: "콘텐츠 제작 자동화 시스템과 웹·앱 서비스를 직접 개발하고 운영했습니다. 일본 시니어 YouTube 채널은 90일 누적 조회수 150만+, 구독자 6,000명+, 첫 달 수익 $3,500+를 기록했으며, 여러 서비스에서 실제 유료 전환을 만들었습니다.",
     projectsCta: "프로젝트 보기",
     contactCta: "연락하기",
     metricsTitle: "숫자로 확인한 시장 반응",
