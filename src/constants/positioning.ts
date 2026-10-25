@@ -25,7 +25,7 @@ export const metrics = [
 export const caseStudies: CaseStudy[] = [
   {
     slug: "youtube-senior-jp",
-    name: { ko: "일본 시니어 유튜브 채널", en: "Japanese Senior YouTube Channel" },
+    name: { ko: "콘텐츠 자동화 시스템 개발 · YouTube 채널 운영", en: "Japanese Senior YouTube Channel" },
     category: { ko: "콘텐츠 비즈니스 · 시장 검증", en: "Content business · Market validation" },
     need: { ko: "해외 시니어 시장에서 수익화 가능한 장편 스토리 콘텐츠 수요를 포착했습니다.", en: "Identified demand for monetizable long-form story content in the overseas senior market." },
     execution: { ko: "배경지식 없이 시장과 경쟁 콘텐츠를 조사하고, 주제·제목·썸네일·서사 구조를 데이터로 반복 실험했습니다. 초반 이탈을 줄이기 위해 콜드 오픈을 도입했습니다.", en: "Researched the market and competitors from scratch, then iterated on topics, titles, thumbnails, and story structure using performance data. Introduced cold opens to reduce early drop-off." },
